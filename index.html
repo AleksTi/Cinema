@@ -6,68 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Webpack Boilerplate</title>
+    <title>Первый кинотеатр в Иннополис</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="build/style.css" />
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+
+    <!--[if lte IE 9]>
+        <script src="js/IE9.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
-    <div>
+    <div class="container">
         <header>
             <a href="http://university.innopolis.ru" target="_blank"><img src="images/logo.png" alt="Лого Иннополис" style="background-color:darkgrey" title="Иннополис.ру"/></a>
-            <nav>
-                <a href="#">Заказать билет</a>
-                <a href="#">Преимущества</a>
-                <a href="#">Фильмы</a>
-                <a href="#">Контакты</a>
+            <nav aria-label="Главное меню">
+                <ul>
+                    <li><a href="#order">Заказать билет</a></li>
+                    <li><a href="#advantages">Преимущества</a></li>
+                    <li><a href="#movies">Фильмы</a></li>
+                    <li><a href="#footer">Контакты</a></li>
+                </ul>
             </nav>
             Ваш город:  <u>Москва</u>
         </header>
+        
         <div>
-            Закажите билет в кино   
+            <h1>Закажите билет в кино</h1>  
             Всем покупателям подарок!
         </div>
+
         <section>            
-            <b>Добро пожаловать!</b>
+            <h2>Добро пожаловать!</h2>
             <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
             <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
         </section>
-        <section>
-                <b>Почему мы?</b>
-            <div>
+
+        <section id="advantages">
+            <!--<a name="advantages"></a>-->
+            <h2>Почему мы?</h2>
+            <section>
                 <img src="images/b2_icon_1.jpg" width="100" height="100" alt="Экраны">
-                Большие экраны 
+                <h3>Большие экраны </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</p>
-            </div>
-            <div>
+            </section>
+            <section>
                 <img src="images/b2_icon_2.jpg" width="100" height="100" alt="Звук">
-                Объемный звук
+                <h3>Объемный звук</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div>
+            </section>
+            <section>
                 <img src="images/b2_icon_3.jpg" width="100" height="100" alt="Диван">
-                Удобные кресла 
+                <h3>Удобные кресла</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</p>
-            </div>
+            </section>
         </section>
-        <section>
-            <b>Выберите фильм</b>
-            <div>
-                Начало сеанса        
-                Название фильма        
-                Жанр        
-                10:00 Человек-паук фантастика, боевик, приключения 
-                12:00 Собачья жизнь 2 фэнтези, драма, комедия 
-                14:00 История игрушек 4 мультфильм, фэнтези, комедия 
-                16:00 Люди в черном: Интернэшнл фантастика, боевик, комедия
-            </div>
-            <div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</p>
-            </div>
+
+        <section id="order">
+            <div class="movie-list">
+                <h2 class="movie-list__header">Выберите фильм</h2>
+                <div class="movie-list__container">
+                    <table class="movie-list__table" cellspacing="5" cellpadding="10" border="1">
+                        <thead class="movie-list__table__header">
+                            <tr>
+                                <th>Начало сеанса</th>
+                                <th>Название фильма</th>
+                                <th>Жанр</th>
+                                <th>Заказать</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10:00</td>
+                                <td>Человек-паук</td>
+                                <td>фантастика, боевик, приключения</td>
+                                <td>+</td>
+                            </tr>
+                            <tr>
+                                <td>12:00</td>
+                                <td>Собачья жизнь 2</td>
+                                <td>фэнтези, драма, комедия</td>
+                                <td>+</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td>История игрушек 4</td>
+                                <td>мультфильм, фэнтези, комедия</td>
+                                <td>+</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>16:00</td>
+                                <td>Люди в черном: Интернэшнл</td>
+                                <td>фантастика, боевик, комедия</td>
+                                <td>+</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</p>
+                </div>
+            </div>                       
         </section>
+
         <section>
-            <img src="images/b4_img.jpg" alt="Подарок" width="150" height="150" />
-            <b>Подарок каждому!</b>
+            <img src="images/b4_img.jpg" alt="Подарочный набор" width="150" height="150" />
+            <h2>Подарок каждому!</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita 
                 libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam! 
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita 
@@ -78,76 +123,108 @@
                 libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!</p>
             <span>Получить подарок</span>
         </section>
-        <section>
-            <div>
-                <b>Фильмы</b>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, 
-                    laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!</p>
-            </div>
-            <div>
-                <p> <img src="images/mov1.jpg" width="100" height="100" alt="Человек-паук">
-                    <a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                    <img src="images/mov2.jpg" width="100" height="100" alt="Собачья жизнь 2">
-                    <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank" title="Кинопоиск.ру">Собачья жизнь 2</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                    <img src="images/mov3.jpg" width="100" height="100" alt="Люди в черном: Интернэшнл">
-                    <a href="https://www.kinopoisk.ru/film/693730/" target="_blank" title="Кинопоиск.ру">Люди в черном: Интернэшнл</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                    <br />
-                    <img src="images/mov1.jpg" width="100" height="100" alt="Человек-паук">
-                    <a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                    <img src="images/mov2.jpg" width="100" height="100" alt="Собачья жизнь 2">
-                    <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank" title="Кинопоиск.ру">Собачья жизнь 2</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                    <img src="images/mov3.jpg" width="100" height="100" alt="Люди в черном: Интернэшнл">
-                    <a href="https://www.kinopoisk.ru/film/693730/" target="_blank" title="Кинопоиск.ру">Люди в черном: Интернэшнл</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                    <br />
-                    <img src="images/mov1.jpg" width="100" height="100" alt="Человек-паук">
-                    <a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                    <img src="images/mov2.jpg" width="100" height="100" alt="Собачья жизнь 2">
-                    <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank" title="Кинопоиск.ру">Собачья жизнь 2</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                    <img src="images/mov3.jpg" width="100" height="100" alt="Люди в черном: Интернэшнл">
-                    <a href="https://www.kinopoisk.ru/film/693730/" target="_blank" title="Кинопоиск.ру">Люди в черном: Интернэшнл</a>
-                    Lorem ipsum dolor sit amet, consectetur
-                </p>
-            </div>
+
+        <section id="movies">
+            <!--<a name="movies"></a>-->
+            <h2>Фильмы</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, 
+                laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!</p>
+            <p> 
+                <img src="images/mov1.jpg" width="100" height="100" alt="Человек-паук">
+                <a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a>
+                Lorem ipsum dolor sit amet, consectetur
+                <img src="images/mov2.jpg" width="100" height="100" alt="Собачья жизнь 2">
+                <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank" title="Кинопоиск.ру">Собачья жизнь 2</a>
+                Lorem ipsum dolor sit amet, consectetur
+                <img src="images/mov3.jpg" width="100" height="100" alt="Люди в черном: Интернэшнл">
+                <a href="https://www.kinopoisk.ru/film/693730/" target="_blank" title="Кинопоиск.ру">Люди в черном: Интернэшнл</a>
+                Lorem ipsum dolor sit amet, consectetur
+                <br />
+                <img src="images/mov1.jpg" width="100" height="100" alt="Человек-паук">
+                <a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a>
+                Lorem ipsum dolor sit amet, consectetur
+                <img src="images/mov2.jpg" width="100" height="100" alt="Собачья жизнь 2">
+                <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank" title="Кинопоиск.ру">Собачья жизнь 2</a>
+                Lorem ipsum dolor sit amet, consectetur
+                <img src="images/mov3.jpg" width="100" height="100" alt="Люди в черном: Интернэшнл">
+                <a href="https://www.kinopoisk.ru/film/693730/" target="_blank" title="Кинопоиск.ру">Люди в черном: Интернэшнл</a>
+                Lorem ipsum dolor sit amet, consectetur
+                <br />
+                <img src="images/mov1.jpg" width="100" height="100" alt="Человек-паук">
+                <a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a>
+                Lorem ipsum dolor sit amet, consectetur
+                <img src="images/mov2.jpg" width="100" height="100" alt="Собачья жизнь 2">
+                <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank" title="Кинопоиск.ру">Собачья жизнь 2</a>
+                Lorem ipsum dolor sit amet, consectetur
+                <img src="images/mov3.jpg" width="100" height="100" alt="Люди в черном: Интернэшнл">
+                <a href="https://www.kinopoisk.ru/film/693730/" target="_blank" title="Кинопоиск.ру">Люди в черном: Интернэшнл</a>
+                Lorem ipsum dolor sit amet, consectetur
+            </p>
         </section>
+
         <div>
             Google Map
         </div>
-        <footer>
-            <div>
-                Имя*
-            </div>
-            <div>
-                Выбор1 Выбор2 Выбор3
-            </div>
-            <div>
-                Выбор1        
-                Выбор2
-            </div>
-            <div>
-                Комментарий
-            </div>
-            <div>
-                Я согласен на обработку персональных данных
-            </div>
-            <div>
-                <span>
-                    Загрузить файл
-                </span>
-            </div>
-            <div>
-                <span>
-                    Отправить
-                </span> 
-            </div>
+
+        <footer id="footer">
+            <!--<a name="footer"></a>-->
+            <!-- <form action="index.html" method="get"> -->
+            <form action="order.php" method="post">
+                <div>
+                    <input type="text" name="clientName" value=""  id="input-text-client-name" placeholder="Имя*" required  aria-label="Введите имя"/><br />                    
+                </div>
+                <div>
+                    <select name="placeNumber" id="select-place" required aria-label="Выберите место">
+                        <option value="1">Выбор1</option>
+                        <option value="2">Выбор2</option>
+                        <option value="3">Выбор3</option>
+                        <option value="4">Выбор4</option>
+                        <option value="5">Выбор5</option>
+                        <option value="6">Выбор6</option>
+                        <option value="7">Выбор7</option>
+                        <option value="8">Выбор8</option>
+                        <option value="9">Выбор9</option>
+                        <option value="10">Выбор10</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="radio" name="radioSelector" id="radio-sth-1" value="1" />
+                    <label for="radio-sth-1">Выбор 1</label><br />    
+                    <input type="radio" name="radioSelector" id="radio-sth-2" value="2" />
+                    <label for="radio-sth-2">Выбор 2</label>
+                </div>
+                <div>
+                    <input type="email" name="clientEmail" id="" placeholder="e-mail" required aria-label="Введите e-mail" />
+                </div>
+                <div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Комментарий" aria-label="Комментарий"></textarea>
+                </div>
+                <div>
+                    <input type="checkbox" name="personalData" id="checkbox-personal-data" required>
+                    <label for="checkbox-personal-data">Я согласен на обработку персональных данных</label>
+                </div>
+                <div>
+                    <input type="file" name="" id="" aria-label="Выберите файл">
+                </div>
+                <input type="submit" value="Отправить">
+            </form>
         </footer>
+        <div>
+            <h2>Дополнительные задачи</h2>
+            <div>
+                <h3>Шаг 11</h3>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <ol reversed type="1" start="2">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ol>
+            </div>
+        </div>
     </div>    
 </body>
 </html>
