@@ -9,7 +9,7 @@
     <title>Первый кинотеатр в Иннополис</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="build/style.css" />
-    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/mai.css">
 
     <!--[if lte IE 9]>
         <script src="js/IE9.js"></script>
@@ -21,7 +21,7 @@
     <div class="container">
         <header>
             <a href="http://university.innopolis.ru" target="_blank"><img src="images/logo.png" alt="Лого Иннополис" style="background-color:darkgrey" title="Иннополис.ру"/></a>
-            <nav aria-label="Главное меню">
+            <nav class="main-nav" aria-label="Главное меню">
                 <ul>
                     <li><a href="#order">Заказать билет</a></li>
                     <li><a href="#advantages">Преимущества</a></li>
@@ -67,7 +67,7 @@
             <div class="movie-list">
                 <h2 class="movie-list__header">Выберите фильм</h2>
                 <div class="movie-list__container">
-                    <table class="movie-list__table" cellspacing="5" cellpadding="10" border="1">
+                    <table class="movie-list__table">
                         <thead class="movie-list__table__header">
                             <tr>
                                 <th>Начало сеанса</th>
@@ -95,17 +95,22 @@
                                 <td>мультфильм, фэнтези, комедия</td>
                                 <td>+</td>
                             </tr>
-                        </tbody>
-                        <tfoot>
                             <tr>
                                 <td>16:00</td>
                                 <td>Люди в черном: Интернэшнл</td>
                                 <td>фантастика, боевик, комедия</td>
                                 <td>+</td>
                             </tr>
+                        </tbody>
+                        <tfoot>                            
+                            <tr>
+                                <td colspan="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
                         </tfoot>
                     </table>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</p>
                 </div>
             </div>                       
         </section>
@@ -169,12 +174,13 @@
         <footer id="footer">
             <!--<a name="footer"></a>-->
             <!-- <form action="index.html" method="get"> -->
-            <form action="order.php" method="post">
+            <form action="/order.php" method="post">
                 <div>
-                    <input type="text" name="clientName" value=""  id="input-text-client-name" placeholder="Имя*" required  aria-label="Введите имя"/><br />                    
+                    <input type="text" name="clientName" value=""  id="input-text-client-name" placeholder="Имя*" required aria-required="true" aria-label="Введите имя" /><br />
                 </div>
                 <div>
-                    <select name="placeNumber" id="select-place" required aria-label="Выберите место">
+                    <select name="placeNumber" id="select-place" required aria-required="true" aria-label="Выберите место">
+                        <option disabled selected>Выберите место</option>
                         <option value="1">Выбор1</option>
                         <option value="2">Выбор2</option>
                         <option value="3">Выбор3</option>
@@ -194,13 +200,13 @@
                     <label for="radio-sth-2">Выбор 2</label>
                 </div>
                 <div>
-                    <input type="email" name="clientEmail" id="" placeholder="e-mail" required aria-label="Введите e-mail" />
+                    <input type="email" name="clientEmail" id="" placeholder="e-mail" required aria-required="true" aria-label="Введите e-mail" />
                 </div>
                 <div>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Комментарий" aria-label="Комментарий"></textarea>
+                    <textarea name="clientComment" id="" cols="30" rows="10" placeholder="Комментарий" aria-label="Комментарий" ></textarea>
                 </div>
                 <div>
-                    <input type="checkbox" name="personalData" id="checkbox-personal-data" required>
+                    <input type="checkbox" name="personalData" id="checkbox-personal-data" required aria-required="true">
                     <label for="checkbox-personal-data">Я согласен на обработку персональных данных</label>
                 </div>
                 <div>
@@ -223,6 +229,7 @@
                     <li>2</li>
                     <li>3</li>
                 </ol>
+                
             </div>
         </div>
     </div>    
