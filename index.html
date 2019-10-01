@@ -9,7 +9,8 @@
     <title>Первый кинотеатр в Иннополис</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="build/style.css" />
-    <link rel="stylesheet" href="css/mai.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
 
     <!--[if lte IE 9]>
         <script src="js/IE9.js"></script>
@@ -19,8 +20,8 @@
 
 <body>
     <div class="container">
-        <header>
-            <a href="http://university.innopolis.ru" target="_blank"><img src="images/logo.png" alt="Лого Иннополис" style="background-color:darkgrey" title="Иннополис.ру"/></a>
+        <header class="header">
+            <div class="logo"><a href="http://university.innopolis.ru" target="_blank"><img src="images/logo.png" alt="Лого Иннополис" style="background-color:darkgrey" title="Иннополис.ру"/></a></div>
             <nav class="main-nav" aria-label="Главное меню">
                 <ul>
                     <li><a href="#order">Заказать билет</a></li>
@@ -29,7 +30,7 @@
                     <li><a href="#footer">Контакты</a></li>
                 </ul>
             </nav>
-            Ваш город:  <u>Москва</u>
+            <div class="location">Ваш город:  <u>Москва</u></div>            
         </header>
         
         <div>
@@ -68,46 +69,70 @@
                 <h2 class="movie-list__header">Выберите фильм</h2>
                 <div class="movie-list__container">
                     <table class="movie-list__table">
-                        <thead class="movie-list__table__header">
+                        <thead class="movie-list__thead">
                             <tr>
-                                <th>Начало сеанса</th>
-                                <th>Название фильма</th>
-                                <th>Жанр</th>
-                                <th>Заказать</th>
+                                <th><a href="#">Время</a><div class="movie-list__triangle-up"></div></th>
+                                <th><a href="#">Название фильма</a><div class="movie-list__triangle-down"></div></th>
+                                <th><a href="#">Жанр </a></div></th>
+                                <th><a href="#">Заказ </a></div></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="movie-list__tbody">
                             <tr>
-                                <td>10:00</td>
-                                <td>Человек-паук</td>
+                                <td>10am - 12pm</td>
+                                <td><a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a></td>
                                 <td>фантастика, боевик, приключения</td>
-                                <td>+</td>
+                                <td><svg 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="33px" height="33px">
+                                   <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                    d="M16.505,32.994 C7.393,32.994 0.005,25.607 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.607 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.777 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                                   </svg></td>
                             </tr>
                             <tr>
-                                <td>12:00</td>
-                                <td>Собачья жизнь 2</td>
+                                <td>12pm - 02pm</td>
+                                <td><a href="https://www.kinopoisk.ru/film/1122114/" target="_blank" title="Кинопоиск.ру">Собачья жизнь 2</a></td>
                                 <td>фэнтези, драма, комедия</td>
-                                <td>+</td>
+                                <td><svg 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="33px" height="33px">
+                                   <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                    d="M16.505,32.994 C7.393,32.994 0.005,25.607 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.607 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.777 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                                   </svg></td>
                             </tr>
                             <tr>
-                                <td>14:00</td>
-                                <td>История игрушек 4</td>
+                                <td>02pm - 03pm</td>
+                                <td><a href="https://www.kinopoisk.ru/film/846824/" target="_blank" title="Кинопоиск.ру">История игрушек 4</a></td>
                                 <td>мультфильм, фэнтези, комедия</td>
-                                <td>+</td>
+                                <td><svg 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="33px" height="33px">
+                                   <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                    d="M16.505,32.994 C7.393,32.994 0.005,25.607 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.607 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.777 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                                   </svg></td>
                             </tr>
-                            <tr>
-                                <td>16:00</td>
-                                <td>Люди в черном: Интернэшнл</td>
+                            <tr class="movie-list__tbody-tr">
+                                <td>03pm - 05pm</td>
+                                <td><a href="https://www.kinopoisk.ru/film/693730/" target="_blank" title="Кинопоиск.ру">Люди в черном: Интернэшнл</a></td>
                                 <td>фантастика, боевик, комедия</td>
-                                <td>+</td>
+                                <td><svg 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="33px" height="33px">
+                                   <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                                    d="M16.505,32.994 C7.393,32.994 0.005,25.607 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.607 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.777 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                                   </svg></td>
                             </tr>
                         </tbody>
-                        <tfoot>                            
+                        <tfoot class="movie-list__tfoot">                            
                             <tr>
                                 <td colspan="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</td>
+                                <!-- <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
+                                <td></td> -->
                             </tr>
                         </tfoot>
                     </table>
@@ -214,24 +239,8 @@
                 </div>
                 <input type="submit" value="Отправить">
             </form>
+            
         </footer>
-        <div>
-            <h2>Дополнительные задачи</h2>
-            <div>
-                <h3>Шаг 11</h3>
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-                <ol reversed type="1" start="2">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ol>
-                
-            </div>
-        </div>
     </div>    
 </body>
 </html>
