@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="build/style.css" />
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet"> -->
 
     <!--[if lte IE 9]>
         <script src="js/IE9.js"></script>
@@ -20,26 +20,33 @@
 
 <body>
     <div class="container">
+
+        <div class="block-top"></div>
+
         <header class="header">
-            <div class="logo"><a href="http://university.innopolis.ru" target="_blank"><img src="images/logo.png" alt="Лого Иннополис" style="background-color:darkgrey" title="Иннополис.ру"/></a></div>
-            <nav class="main-nav" aria-label="Главное меню">
+            <div class="header__logo"><a href="http://university.innopolis.ru" target="_blank"><img src="images/logo.png" alt="Лого Иннополис" title="Иннополис.ру"/></a></div>
+            <div class="header__location">Ваш город:  <u>Москва</u></div>            
+            <nav class="header-nav" aria-label="Главное меню">
                 <ul>
-                    <li><a href="#order">Заказать билет</a></li>
-                    <li><a href="#advantages">Преимущества</a></li>
-                    <li><a href="#movies">Фильмы</a></li>
-                    <li><a href="#footer">Контакты</a></li>
+                    <li class="header-nav__item">
+                        <a class="header-nav__item-link" href="#order">Заказать билет</a></li>
+                    <li class="header-nav__item">
+                        <a class="header-nav__item-link" href="#advantages">Преимущества</a></li>
+                    <li class="header-nav__item">
+                        <a class="header-nav__item-link" href="#movies">Фильмы</a></li>
+                    <li class="header-nav__item">
+                        <a class="header-nav__item-link" href="#footer">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="location">Ваш город:  <u>Москва</u></div>            
         </header>
         
-        <div>
-            <h1>Закажите билет в кино</h1>  
+        <div class="title">
+            <h1 class="title__h1">Закажите билет в кино</h1>  
             Всем покупателям подарок!
         </div>
-
-        <section>            
-            <h2>Добро пожаловать!</h2>
+    
+        <section class="greeting">            
+            <h2 class="greeting__h2">Добро пожаловать!</h2>
             <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
             <p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p>
         </section>
@@ -159,6 +166,11 @@
             <h2>Фильмы</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, 
                 laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!</p>
+            <div owl-carousel owl-theme>
+                <img src="images/mov1.jpg" width="100" height="100" alt="Человек-паук">
+                <a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a>
+                Lorem ipsum dolor sit amet, consectetur
+            </div>
             <p> 
                 <img src="images/mov1.jpg" width="100" height="100" alt="Человек-паук">
                 <a href="https://www.kinopoisk.ru/film/1008445/" target="_blank" title="Кинопоиск.ру">Человек-паук</a>
@@ -241,6 +253,7 @@
             </form>
             
         </footer>
-    </div>    
+    </div>
+
 </body>
 </html>
