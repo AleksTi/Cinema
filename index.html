@@ -19,10 +19,9 @@
 </head>
 
 <body>
+    
     <div class="container">
-
         <div class="block-top"></div>
-
         <header class="header">
             <div class="header__logo"><a href="http://university.innopolis.ru" target="_blank"><img src="images/logo.png" alt="Лого Иннополис" title="Иннополис.ру"/></a></div>
             <div class="header__location">Ваш город:  <u>Москва</u></div>            
@@ -56,27 +55,29 @@
         <section id="advantages" class="advantages">
             <!--<a name="advantages"></a>-->
             <h2 class="advantages__header">Почему мы?</h2>
-            <section class="advantages__feature">
-                <div class="advantages__image">
-                    <img  src="images/icon_1.png" alt="Экраны">
+            <div class="advantages__feature-wrapper">
+                <div class="advantages__feature">
+                    <div class="advantages__image">
+                        <img  src="images/icon_1.png" alt="Экраны">
+                    </div>
+                    <h3 class="advantages__feature-header">Большие экраны </h3>
+                    <p class="advantages__feature-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</p>
                 </div>
-                <h3 class="advantages__feature-header">Большие экраны </h3>
-                <p class="advantages__feature-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</p>
-            </section>
-            <section class="advantages__feature">
-                <div class="advantages__image">
-                    <img  src="images/icon_2.png" alt="Зву">
+                    <div class="advantages__feature">
+                    <div class="advantages__image">
+                        <img  src="images/icon_2.png" alt="Звук">
+                    </div>
+                    <h3 class="advantages__feature-header">Объемный звук</h3>
+                    <p class="advantages__feature-text">Lorem ipsum dolor sit amet.</p>
                 </div>
-                <h3 class="advantages__feature-header">Объемный звук</h3>
-                <p class="advantages__feature-text">Lorem ipsum dolor sit amet.</p>
-            </section>
-            <section class="advantages__feature">
-                <div class="advantages__image">
-                    <img  src="images/icon_3.png" alt="Диан">
+                <div class="advantages__feature">
+                    <div class="advantages__image">
+                        <img  src="images/icon_3.png" alt="Диан">
+                    </div>
+                    <h3 class="advantages__feature-header">Удобные кресла</h3>
+                    <p class="advantages__feature-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</p>
                 </div>
-                <h3 class="advantages__feature-header">Удобные кресла</h3>
-                <p class="advantages__feature-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</p>
-            </section>
+            </div>
         </section>
 
         <section id="order">
@@ -88,8 +89,8 @@
                             <tr>
                                 <th><a href="#">Время</a><div class="movie-list__triangle-up"></div></th>
                                 <th><a href="#">Название фильма</a><div class="movie-list__triangle-down"></div></th>
-                                <th><a href="#">Жанр </a></div></th>
-                                <th><a href="#">Заказ </a></div></th>
+                                <th><a href="#">Жанр</a></th>
+                                <th><a href="#">Заказ</a></th>
                             </tr>
                         </thead>
                         <tbody class="movie-list__tbody">
@@ -152,7 +153,7 @@
                         </tfoot>
                     </table>
                 </div>
-            </div>                       
+            </div> 
         </section>
 
         <section class="gift">

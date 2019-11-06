@@ -335,23 +335,27 @@ input[type="button"], input[type="submit"], button {
     max-width: 1030px;
     padding: 75px 0px;
     margin: 0px auto;
-
 }
 
 .advantages__header {
     font-size: 50px;
-    margin-bottom: 120px;    
+    margin-bottom: 120px;   
 }
 
 .advantages__feature {
     width: 300px;
-    display: inline-block;
+    /* display: inline-block; */
+    float: left;
     vertical-align: top;
     margin-right: 61px;
-    text-align: center;    
-    /* margin: 0 auto; */
-    
+    text-align: center;
 }
+
+/* Исправляет поведение элементов float:left */
+.advantages__feature-wrapper {
+    overflow: hidden;
+}
+
 
 .advantages__feature:last-of-type {
     margin-right: 0px;
@@ -362,8 +366,15 @@ input[type="button"], input[type="submit"], button {
     align-items: flex-end;
     justify-content: space-around;
     height: 211px;
-    margin-bottom: 36px;
-    vertical-align: bottom;
+    margin-bottom: 36px;  
+}
+
+.advantages__image {
+    transition: all 0.2s ease-out;
+}
+    
+.advantages__image:hover{
+    transform: scale(1.07);
 }
 
 .advantages__feature-header {
@@ -472,7 +483,14 @@ input[type="button"], input[type="submit"], button {
 
 
 .footer__soc-net-icon {
-    margin-right: 8px;
+    margin-right: 8px;    
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25); 
+    border-radius: 50%;
+}
+
+.footer__soc-net-icon:hover {
+    margin-right: 8px;    
+    box-shadow: none;
 }
 
 .footer__soc-net-icon:last-of-type {
@@ -517,6 +535,7 @@ input[type="button"], input[type="submit"], button {
 
 .header-nav__item-link:hover {
     color: #90d23d;
+    border-bottom: 1px solid #90d23d;
 }
 
 .block-top{
