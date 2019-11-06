@@ -1,6 +1,10 @@
+/* TODO:
+
+*/
+
 /* Reset */
 
-body, p, h1, h2, h3, table, thead, tbody, tfoot, tr, th, td, ul {
+body, p, h1, h2, h3, table, thead, tbody, tfoot, tr, th, td, ul, div, section, span {
     background: transparent;
     border: 0;
     margin: 0;
@@ -298,14 +302,194 @@ input[type="button"], input[type="submit"], button {
     font-weight: 100;
 }
 
+.greeting-container {
+    position: relative;
+}
+
 .greeting {
+    width: 516px;
+    position: absolute;
+    top: -128px;
+    right: 165px;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
+    padding: 31px 75px 42px 31px;   
+}
+
+.greeting__header {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.greeting__text {
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 16px;
+    letter-spacing: 0.13px;
+}
+
+
+
+.advantages {
+    max-width: 1030px;
+    padding: 75px 0px;
+    margin: 0px auto;
+
+}
+
+.advantages__header {
+    font-size: 50px;
+    margin-bottom: 120px;    
+}
+
+.advantages__feature {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 61px;
+    text-align: center;    
+    /* margin: 0 auto; */
     
 }
 
+.advantages__feature:last-of-type {
+    margin-right: 0px;
+}
+
+.advantages__image {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 211px;
+    margin-bottom: 36px;
+    vertical-align: bottom;
+}
+
+.advantages__feature-header {
+    font-size: 35px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.advantages__feature-text {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.gift {
+    background: url(../images/backgroundTicket.png);
+    height: 700px;
+    position: relative;
+    padding: 136px 164px 0px 504px;
+    margin-bottom: 84px;
+}
+
+.gift__image {
+    background: url(../images/backgroundGift.png);
+    position: absolute;
+    top: -65px;
+    left: 170px;
+    width: 330px;
+    height: 330px;
+    box-shadow: 10.5px 18.187px 12px 0px rgba(35, 31, 32, 0.55);
+    z-index: 76;
+    border-radius: 50%;
+    background-color: rgb(251, 175, 22);      
+}
+
+.gift__header {
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    text-align: right;
+    margin-bottom: 54px;
+}
+
+.gift__text {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+    text-align: right;
+    margin-bottom: 16px;
+}
+
+.gift__button {    
+    border-radius: 15px;
+    background-color: rgb(144, 210, 61);
+    position: absolute;
+    left: 981px;
+    top: 471px;
+    width: 220px;
+    height: 55px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: center;
+    padding-top: 18px;
+}
+
+.movie-table {
+    width: 970px;
+    margin: 0px auto 57px;
+}
+
+.movie-table__header {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.movie-table__text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: left;
+    max-width: 670px;   
+    margin-bottom: 76px;
+}
+
+.movie-table__row {
+    text-align: justify;
+}
+
+.movie-table__movie-item {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin-right: 31px;
+}
+
+.movie-table__movie-item:last-of-type {
+    margin-right: 0px;
+}
+
+.footer__soc-nets {
+    margin-bottom: 25px;
+}
+
+
+.footer__soc-net-icon {
+    margin-right: 8px;
+}
+
+.footer__soc-net-icon:last-of-type {
+    margin-right: 0;
+}
+
+.footer__rights {
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+
 /* Компоненты */
-
-
-
 .header__logo{
     float: left;    
 }
@@ -335,8 +519,6 @@ input[type="button"], input[type="submit"], button {
     color: #90d23d;
 }
 
-
-
 .block-top{
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
@@ -347,6 +529,8 @@ input[type="button"], input[type="submit"], button {
     z-index: -1;
     width: 100%;
 }
+
+
 
 
 .title {
@@ -367,7 +551,9 @@ input[type="button"], input[type="submit"], button {
   
 
 .movie-list{
-    padding: 100px 0;
+    margin-top: 29px;
+    margin-bottom: 112px;
+    /* padding: 100px 0; */
 }
 
 .movie-list__header{
@@ -377,7 +563,7 @@ input[type="button"], input[type="submit"], button {
     color: rgb(37, 37, 37);
     line-height: 1.2;
     text-align: center;
-    margin: 78px;
+    margin-bottom: 78px;
 }
 
 .movie-list__table{
@@ -491,6 +677,22 @@ input[type="button"], input[type="submit"], button {
     border-right: 10px solid transparent;    
     border-top: 20px solid #fff;
     margin-left: 10px; 
-  }
+}
+  
+.footer__map {
+    height: 450px;
+    background: url('../images/map.png');
+}
+
+.footer__rights-soc-nets {   
+    background-color: rgb(144, 210, 61);    
+    height: 220px;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.order-form {
+      display: none;
+}
   
   /* Медиа - правила */
