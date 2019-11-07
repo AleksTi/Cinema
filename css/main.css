@@ -4,7 +4,7 @@
 
 /* Reset */
 
-body, p, h1, h2, h3, table, thead, tbody, tfoot, tr, th, td, ul, div, section, span {
+body, p, h1, h2, h3, table, thead, tbody, tfoot, tr, th, td, ul, div, section, span, img {
     background: transparent;
     border: 0;
     margin: 0;
@@ -344,9 +344,7 @@ input[type="button"], input[type="submit"], button {
 
 .advantages__feature {
     width: 300px;
-    /* display: inline-block; */
     float: left;
-    vertical-align: top;
     margin-right: 61px;
     text-align: center;
 }
@@ -462,25 +460,74 @@ input[type="button"], input[type="submit"], button {
     margin-bottom: 76px;
 }
 
-.movie-table__row {
-    text-align: justify;
+.movie-table__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.movie-table__movie-item {
-    display: inline-block;
-    width: 300px;
-    height: 300px;
-    margin-right: 31px;
+.movie-table__movie-item { 
+    width: 296px;
+    height: 296px;
+    margin-bottom: 37px;
+    position: relative;
+    overflow: hidden; 
 }
 
-.movie-table__movie-item:last-of-type {
-    margin-right: 0px;
+.movie-table__image {
+    vertical-align: bottom;
 }
+
+.movie-table__movie-description{
+    position: absolute;
+    height: 100%;
+    bottom: -100%;
+    background-color: rgba(144,210,61,0.8);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 22px 16px;
+    transition: 0.5s;  
+}
+
+.movie-table__movie-item:hover .movie-table__movie-description {
+    bottom: 0;
+}
+
+.movie-table__movie-header {
+    font-size: 35px;
+    color: #fff;
+    font-weight: 900;
+}
+
+.movie-table__movie-header::after {
+    content: "";
+    display: block;
+    width: 83px;
+    border-bottom: 6px solid #fff;
+    margin-top: 9px;
+    margin-bottom: 12px;
+} 
+
+.movie-table__movie-text {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    flex: 1;
+}
+
+.movie-table__link {
+    text-decoration: none;
+}
+
+.movie-table__soc-nets{
+    margin-left: 9px;    
+}
+
 
 .footer__soc-nets {
     margin-bottom: 25px;
 }
-
 
 .footer__soc-net-icon {
     margin-right: 8px;    
