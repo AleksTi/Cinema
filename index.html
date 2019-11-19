@@ -10,16 +10,26 @@
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="build/style.css" />
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <!-- <link rel="stylesheet" href="/css/owl.theme.green.min.css"> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet"> -->
 
     <!--[if lte IE 9]>
         <script src="js/IE9.js"></script>
     <![endif]-->
 
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel();
+        });
+    </script>
+
 </head>
 
 <body>
-    
     <div class="container">
         <div class="block-top"></div>
         <header class="header">
@@ -177,6 +187,7 @@
                 laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!</p>
             
                 <div class="movie-table__container">
+                    <div class="owl-carousel owl-theme">
                     <div class="movie-table__movie-item">
                         <img class="movie-table__image" src="images/mov1.jpg" alt="Человек-паук">
                         <div class="movie-table__movie-description">
@@ -314,7 +325,7 @@
                                 </a>
                             </div>                                
                         </div>                     
-                    </div>                
+                    </div>                                    
                     <div class="movie-table__movie-item">
                         <img class="movie-table__image" src="images/mov1.jpg" alt="Человек-паук">
                         <div class="movie-table__movie-description">
@@ -590,6 +601,7 @@
                                 </a>
                             </div>                                
                         </div>                     
+                    </div>
                     </div>
                 </div>                     
         </section>

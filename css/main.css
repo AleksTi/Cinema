@@ -15,6 +15,18 @@ body, p, h1, h2, h3, table, thead, tbody, tfoot, tr, th, td, ul, div, section, s
     font-family: 'Roboto', sans-serif;
 }
 
+.car1 {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+}
+
+.car2 {
+    width: 200px;
+    height: 200px;
+    background-color: palevioletred;
+}
+
 /* Шрифты */
 
 /* @font-face {
