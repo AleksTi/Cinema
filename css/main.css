@@ -235,7 +235,7 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url(../img/down-arrow.svg) 96% center / 5% no-repeat #fff;
+    background: url(../images/down-arrow.svg) 96% center / 5% no-repeat #fff;
 }
 
 input[type="radio"], input[type="checkbox"] {
@@ -770,7 +770,7 @@ input[type="button"], input[type="submit"], button {
 }
 
 .order-form {
-      display: none;
+      /* display: none; */
 }
   
   /* Медиа - правила */
