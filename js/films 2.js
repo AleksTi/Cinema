@@ -170,8 +170,7 @@ const film = {
 }
 
 let modalBooking = document.getElementById('modalBooking')
-let buttonCloseBooking = document.getElementById('buttonCloseBooking')  
- 
+let buttonCloseBooking = document.getElementById('buttonCloseBooking')    
 
 for (const key in arrHireFilms) {
     const filmName = film.getName.bind(arrHireFilms[key])();
@@ -206,7 +205,8 @@ for (const key in arrHireFilms) {
         bookedFilmName.innerHTML = filmName;
         bookedFilmStart.innerHTML = filmStart;
         bookedFilmJanr.innerHTML = filmJanr;
-        bookedFilmPrice.innerHTML = 100 + Math.floor(Math.random()*100);
+        bookedFilmJanr = Math.floor(Math.random()*)
+
         console.log(this);
     }
     filmsHireHTML.appendChild(tr);
@@ -219,22 +219,6 @@ buttonCloseBooking.onclick = function(){
 
 const listFilms = document.querySelectorAll('.movie-list__tr');
 console.log(listFilms);
-
-let ticketQnt = document.getElementById('ticketQnt');
-let totalCost = document.getElementById('totalCost');
-let filmPrice = document.getElementById('bookedFilmPrice'); 
-
-ticketQnt.onchange = function(){
-    if(ticketQnt.value > 0){
-        totalCost.innerHTML =  parseInt(ticketQnt.value) * parseInt(filmPrice.innerText);         
-        console.log('Кол-во билетов ' + ticketQnt.value);
-        console.log('Общая стоимость ' + totalCost.innerText);
-        console.log('Цена ' + filmPrice.innerText);
-    }
-}
-
-
-
 
 for(let i = 0; i < 3; i++){
     for (const key in arrNewFilms) {

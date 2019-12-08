@@ -298,7 +298,8 @@ input[type="file"] {
     width: 100%;
     display: block;
     cursor: pointer;
-    border-radius: 5px;   
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 input[type="button"], input[type="submit"], button {
@@ -311,26 +312,6 @@ input[type="button"], input[type="submit"], button {
     cursor: pointer;
 }
 
-.order-form__input-wrapper {
-    margin-bottom: 10px;
-}
-
-.booking-form__input-wrapper {
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
-.booking-form__input {
-    font-size: 16px;
-    color: #6c6c6c;
-    padding: 10px 6px;
-    border: 1px solid #bebebe;
-    border-radius: 5px;
-    width: 100%;
-    outline: 0;
-    transition: .2s;
-    display: inline-block;
-    }
 
 /* Сетка макета */
 
@@ -839,20 +820,5 @@ input[type="button"], input[type="submit"], button {
 .order-window__close-button{
     display: block;
     font-weight: 900;
-    width: 22px;
-    text-align: center;
-    background-color: #ddd;
-    margin-bottom: 10px;
-    /* float: right; */
-}
-
-.order-window__close-button:hover{
-    background-color: #bbb;
-    cursor: default;
-}
-
-.booking-window__header{
-    display: inline-block;
-    width: 10rem;
-    margin-bottom: 0.25rem;
+    width:
 }

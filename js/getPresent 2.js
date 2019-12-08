@@ -10,29 +10,22 @@ buttonSendInputForms.onclick = function(event){
 
     if(name){
         console.log('clientName', name);
-        clientName.style.border = '1px solid #bebebe';        
+        selectedPlace.style.border = '1px solid red';        
     } else {
-        clientName.style.border = '1px solid red';
+        clientName.style.border = '2px solid red';
     }
     if (place != 0){
         console.log('selectedPlace', place);
-        selectedPlace.style.border = '1px solid #bebebe';     
+        selectedPlace.style.border = 'none';
     } else {
-        selectedPlace.style.border = '1px solid red';
+        selectedPlace.style.border = '2px solid red';
     }
-
-    if (name && place != 0){
-        console.log('Информация отправлена');
-        clientName.value = '';
-        selectedPlace.value = 0;
-        modalPresentWindow.style.display = 'none';
-    }
+    console.log('Информация отправлена');        
     event.preventDefault();
+    // modalPresentWindow.style.display = 'none';
 }
 
-clientName.onchange = function(){
-    console.log('Имя до нажатия Отправить ' + clientName.value);
-}
+//Создание модального окна 
 
 let buttonGetPresent = document.getElementById('buttonGetPresent');
 let modalPresentWindow = document.getElementById('modalPresent');
