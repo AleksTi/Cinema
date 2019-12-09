@@ -108,6 +108,7 @@
                                     <div class="movie-list__triangle-down"></div>
                                 </th>
                                 <th><a href="#">Жанр</a></th>
+                                <th><a href="#">Цена</a></th>
                                 <th><a href="#">Заказ</a></th>
                             </tr>
                         </thead>
@@ -159,7 +160,7 @@
                         </tbody>
                         <tfoot class="movie-list__tfoot">
                             <tr>
-                                <td colspan="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum
+                                <td colspan="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum
                                     facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus
                                     dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam
                                     sunt!</td>
@@ -689,7 +690,7 @@
                                     <option value="10">Выбор10</option>
                                 </select>
                             </div>
-                            <!-- <div>
+                            <div>
                                 <input class="order-form__radio" type="radio" name="radioSelector" id="radio-sth-1" value="1" />
                                 <label for="radio-sth-1">Выбор 1</label><br />
                                 <input class="order-form__radio" type="radio" name="radioSelector" id="radio-sth-2" value="2" />
@@ -700,9 +701,9 @@
                                     aria-label="Введите e-mail" />
                             </div>
                             <div>
-                                <input class="order-form__textarea" type="textarea" name="clientComment" id="" placeholder="Комментарий" aria-label="Комментарий"> -->
+                                <input class="order-form__textarea" type="textarea" name="clientComment" id="" placeholder="Комментарий" aria-label="Комментарий">
                                 <!-- <textarea name="clientComment" id="" cols="30" rows="10" placeholder="Комментарий" aria-label="Комментарий"></textarea> -->
-                            <!-- </div>
+                            </div>
                             <div>
                                 <input class="order-form__checkbox" type="checkbox" name="personalData" id="checkbox-personal-data" required aria-required="true">
                                 <label for="checkbox-personal-data">Я согласен на обработку персональных данных</label>
@@ -710,16 +711,16 @@
                             <div>
                                 <input class="order-form__input-file" type="file" name="fileUpload" id="fileUpload" aria-label="Выберите файл">
                                 <label for="fileUpload">Выберите файл</label>
-                            </div> -->
+                            </div>
                             <input class="order-form__input-button" id="buttonSendInputForms" type="submit" value="Отправить">
                         </form>
                     </div>
                 </div>
         </footer>
 
-        <div id="modalBooking" class="order-modal">
-                <div class="booking-window order-window">
-                    <span id="buttonCloseBooking" class="order-window__close-button">X</span>
+        <div id="modalBooking" class="booking-modal">
+                <div class="booking-window">
+                    <span id="buttonCloseBooking" class="booking-window__close-button">X</span>
                     <div>
                         <span class="booking-window__header">Название фильма:</span><span id="bookedFilmName"></span>
                     </div>
@@ -734,26 +735,29 @@
                     </div>
                     <form id="bookingForm" class="booking-form" action="#" method="GET">
                         <div class="booking-form__input-wrapper">
-                            <label class="booking-window__header">Количество билетов:</label>
+                            <label class="booking-form__header booking-window__header">Количество билетов:</label>
                             <input class="booking-form__input" type="number" name="ticketQnt" value="" id="ticketQnt" placeholder="Введите кол-во билетов"
-                                required aria-required="true" aria-label="Введите кол-во билетов" required /><br />
+                                required aria-required="true" aria-label="Введите кол-во билетов" required />
                         </div>
                         <div class="booking-form__input-wrapper">
-                            <label class="booking-window__header">Телефон (ххх-хх-ххх):</label>
+                            <label class="booking-form__header booking-window__header">Телефон (ххх-хх-ххх):</label>
                             <input class="booking-form__input" type="tel" name="clientPhone" value="" id="сlientPhone" placeholder="Введите номер телефона"
                                 required aria-required="true" aria-label="Введите номер телефона"
-                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required /><br />
+                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                         </div>
                         <div class="booking-form__input-wrapper">
-                            <label class="booking-window__header">Имя:</label>
+                            <label class="booking-form__header booking-window__header">Имя:</label>
                             <input class="booking-form__input" type="text" name="clientBookedName" value="" id="clientBookedName" placeholder="Введите имя"
-                                required aria-required="true" aria-label="Введите имя" /><br />
+                                required aria-required="true" aria-label="Введите имя" />
                         </div>
                         <div>
                             <span class="booking-window__header">Общая стоимость:</span><span id="totalCost"></span>
                         </div>   
                         <input class="booking-form__input-button" id="buttonSendBooking" type="submit" value="Забронировать">
                     </form>
+                    <div class="booking-window__places">
+
+                    </div>
                 </div>
             </div>
 

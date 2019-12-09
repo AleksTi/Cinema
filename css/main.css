@@ -257,18 +257,19 @@ input[type="radio"] + label::before, input[type="checkbox"] + label::before {
     top: 1px;
     width: 14px;
     height: 14px;
-    border: 1px solid #333;
-    
+    border: 1px solid  #6c6c6c;
 }
     
 input[type="radio"] + label::before {
     border-radius: 100%;
 }
 
-.order-form__radio:checked + label::before, 
+.order-form__radio:checked + label::before {
+    box-shadow: 0 0 0 2px #fff inset, 0 0 0 15px #333 inset;
+}
+
 .order-form__checkbox:checked + label::before {
-    box-sizing: border-box;
-    background-color: #555;
+    box-shadow: 0 0 0 2px #fff inset, 0 0 0 15px #333 inset;
 }
 
 input[type="textarea"] {
@@ -315,22 +316,35 @@ input[type="button"], input[type="submit"], button {
     margin-bottom: 10px;
 }
 
+.booking-form {
+    margin-bottom: 10px;
+}
+
 .booking-form__input-wrapper {
     margin-bottom: 10px;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.booking-form__header {
+  
 }
 
 .booking-form__input {
     font-size: 16px;
     color: #6c6c6c;
-    padding: 10px 6px;
+    padding: 5px 3px;
     border: 1px solid #bebebe;
     border-radius: 5px;
-    width: 100%;
     outline: 0;
-    transition: .2s;
-    display: inline-block;
-    }
+    transition: .2s;   
+    width: initial;
+}
+
+.booking-form__input-button {
+    width: initial;
+    padding: 5px 3px;
+}
 
 /* Сетка макета */
 
@@ -604,8 +618,6 @@ input[type="button"], input[type="submit"], button {
     text-align: center;
 }
 
-
-
 /* Компоненты */
 .header__logo{
     float: left;    
@@ -714,7 +726,7 @@ input[type="button"], input[type="submit"], button {
 
 .movie-list__thead th:first-child{
     border-top-left-radius: 15px;
-    width: 230px;
+    width: 150px;
 }
 
 .movie-list__thead th:last-child{
@@ -722,6 +734,9 @@ input[type="button"], input[type="submit"], button {
     width: 130px;
 }
 
+.movie-list__price {
+    text-align: center;;
+}
 
 .movie-list__tbody td{
     font-size: 22px;
@@ -810,7 +825,7 @@ input[type="button"], input[type="submit"], button {
 
 /* Медиа - правила */
 
-
+.booking-modal,
 .order-modal {
     background: rgba(0,0,0,.5);
     position: fixed;
@@ -823,6 +838,7 @@ input[type="button"], input[type="submit"], button {
     padding-top: 5rem;
 }
 
+.booking-window,
 .order-window {
     position: relative;
     left: 0;
@@ -836,6 +852,7 @@ input[type="button"], input[type="submit"], button {
     border-radius: 0.5rem;
 }
 
+.booking-window__close-button,
 .order-window__close-button{
     display: block;
     font-weight: 900;
@@ -843,16 +860,45 @@ input[type="button"], input[type="submit"], button {
     text-align: center;
     background-color: #ddd;
     margin-bottom: 10px;
-    /* float: right; */
+    border-radius: 0.2rem;
 }
 
+.booking-window__close-button:hover,
 .order-window__close-button:hover{
     background-color: #bbb;
     cursor: default;
+
 }
 
 .booking-window__header{
     display: inline-block;
-    width: 10rem;
+    width: 12rem;
     margin-bottom: 0.25rem;
 }
+
+.booking-window__places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.booking-window__place-item {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #999;
+    font-size: 23px;
+    font-weight: 700;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.booking-window__place-item_booked {
+    background-color: #ffa500;
+}
+
+.booking-window__place-item_free {
+    background-color: #a3cc40;
+}
+

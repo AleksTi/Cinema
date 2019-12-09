@@ -37,7 +37,8 @@ const mockFilmsList = [{
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
         dribbble: "https://dribbble.com/",
-        link: "https://www.kinopoisk.ru/film/1008445/"
+        link: "https://www.kinopoisk.ru/film/1008445/",
+        price: 100
     },
     {
         name: "Собачья жизнь 2",
@@ -50,7 +51,8 @@ const mockFilmsList = [{
         fb: "https://fb.com",
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
-        link: "https://www.kinopoisk.ru/film/1122114/"
+        link: "https://www.kinopoisk.ru/film/1122114/",
+        price: 150
     },
     {
         name: "История игрушек 4",
@@ -64,6 +66,7 @@ const mockFilmsList = [{
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
         link: "https://www.kinopoisk.ru/film/846824/",
+        price: 200
     },
     {
         name: "Люди в чёрном: Интернэшнл",
@@ -76,7 +79,8 @@ const mockFilmsList = [{
         fb: "https://fb.com",
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
-        link: "https://www.kinopoisk.ru/film/693730/"
+        link: "https://www.kinopoisk.ru/film/693730/",
+        price: 250
     }
 ];
 //справочник жанров
@@ -109,6 +113,55 @@ const janrsList = [{
         name: "мультфильм"
     }
 ];
+
+//TODO
+//Генерация мест (20)
+//Стоимость в зависимости от места должна быть разной (центральные, боковые)
+//Забронированные места будут генерироваться случайно
+
+const places = [
+    {
+        number: 1,
+        price: 100,
+        booking: false
+    },
+    {
+        number: 2,
+        price: 100,
+        booking: false
+    },
+    {
+        number: 3,
+        price: 100,
+        booking: false
+    },
+    {
+        number: 4,
+        price: 100,
+        booking: true
+    },
+    {
+        number: 5,
+        price: 100,
+        booking: false
+    },
+    {
+        number: 6,
+        price: 100,
+        booking: true
+    },
+    {
+        number: 7,
+        price: 100,
+        booking: true
+    },
+    {
+        number: 8,
+        price: 100,
+        booking: true
+    }
+]
+
 let arrNewFilms = [];
 let arrHireFilms = [];
 
@@ -167,6 +220,9 @@ const film = {
     getImage: function () {
         return this.image;
     },
+    getPrice: function () {
+        return this.price;
+    },
 }
 
 let modalBooking = document.getElementById('modalBooking')
@@ -178,6 +234,7 @@ for (const key in arrHireFilms) {
     const filmStart = film.getStart.bind(arrHireFilms[key])();
     const filmJanr = film.getJanrs.bind(arrHireFilms[key])();
     const filmLink = film.getLink.bind(arrHireFilms[key])();
+    const filmPrice = film.getPrice.bind(arrHireFilms[key])();
     let filmsHireHTML = document.getElementById('movieListHire');
 
     let filmHTML = `
@@ -185,6 +242,7 @@ for (const key in arrHireFilms) {
         <td class="movie-list__td" id="nameFilm${key}"><a class="movie-list__a" href="${filmLink}" target="_blank"
                 title="Кинопоиск.ру">${filmName}</a></td>
         <td class="movie-list__td" id="janrFilm${key}">${filmJanr}</td>
+        <td class="movie-list__td movie-list__price" id="janrFilm${key}">${filmPrice}</td>        
         <td class="movie-list__td"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 width="33px" height="33px">
                 <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
@@ -206,7 +264,8 @@ for (const key in arrHireFilms) {
         bookedFilmName.innerHTML = filmName;
         bookedFilmStart.innerHTML = filmStart;
         bookedFilmJanr.innerHTML = filmJanr;
-        bookedFilmPrice.innerHTML = 100 + Math.floor(Math.random()*100);
+        bookedFilmPrice.innerHTML = filmPrice
+        // 100 + Math.floor(Math.random()*100);
         console.log(this);
     }
     filmsHireHTML.appendChild(tr);
@@ -223,18 +282,19 @@ console.log(listFilms);
 let ticketQnt = document.getElementById('ticketQnt');
 let totalCost = document.getElementById('totalCost');
 let filmPrice = document.getElementById('bookedFilmPrice'); 
+totalCost.innerHTML =  '0';
 
 ticketQnt.onchange = function(){
-    if(ticketQnt.value > 0){
+    if(ticketQnt.value >= 0){
         totalCost.innerHTML =  parseInt(ticketQnt.value) * parseInt(filmPrice.innerText);         
         console.log('Кол-во билетов ' + ticketQnt.value);
         console.log('Общая стоимость ' + totalCost.innerText);
         console.log('Цена ' + filmPrice.innerText);
+    } else {
+        ticketQnt.value =  0;
+        totalCost.innerHTML = '0';
     }
 }
-
-
-
 
 for(let i = 0; i < 3; i++){
     for (const key in arrNewFilms) {
@@ -300,4 +360,42 @@ for(let i = 0; i < 3; i++){
     }
 }
 
+let placesHTML = document.querySelector('.booking-window__places');
+for (const place of places) {
+    let placeDiv = document.createElement('div');
+    placeDiv.innerHTML = place.number;
+    placeDiv.classList.add('booking-window__place-item');    
+    if(place.booking){
+        placeDiv.classList.add('booking-window__place-item_free');
+    } else {
+        placeDiv.classList.add('booking-window__place-item_booked');
+    }
+    placeDiv.addEventListener('click', order);
+    placeDiv.addEventListener('click', placeToggle);
+    placeDiv.addEventListener('contextmenu', placeContext);
+    placeDiv.addEventListener('mouseover', placeHover);
+    placeDiv.addEventListener('mouseout', placeHoverOut);    
+    placesHTML.append(placeDiv);
+}
+
+// Обработка клика на квадрате с местом, заполнение элементов input формы;
+function order(event) {
+    console.log(event.srcElement.innerHTML);
+    console.log('Обработка клика на квадрате с местом, заполнение элементов input формы');
+}
+// Обработка клика на квадрате с местом, смена цвета;
+function placeToggle() {
+    console.log('Обработка клика на квадрате с местом, смена цвета');
+}
+// Обрабтка правого клика на квадате с местом;
+function placeContext() {
+    console.log('Обрабтка правого клика на квадате с местом');
+}
+// Обработка события перемещения курсора мыши над элементом;
+function placeHover() {
+    console.log('Обработка события перемещения курсора мыши над элементом');
+}
+function placeHoverOut() {
+    console.log('Обработка события перемещения курсора мыши над элементом - Out');
+}
 
