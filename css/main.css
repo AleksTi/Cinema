@@ -326,9 +326,9 @@ input[type="button"], input[type="submit"], button {
     flex-wrap: wrap;
 }
 
-.booking-form__header {
+/* .booking-form__header {
   
-}
+} */
 
 .booking-form__input {
     font-size: 16px;
@@ -342,8 +342,16 @@ input[type="button"], input[type="submit"], button {
 }
 
 .booking-form__input-button {
-    width: initial;
-    padding: 5px 3px;
+    border-radius: 15px;
+    background-color: rgb(144, 210, 61);
+    border: 1px solid rgb(144, 210, 61);
+    color: rgb(255, 255, 255);
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 15px auto;
 }
 
 /* Сетка макета */
@@ -900,5 +908,9 @@ input[type="button"], input[type="submit"], button {
 
 .booking-window__place-item_free {
     background-color: #a3cc40;
+}
+
+.booking-window__place-item_hover {
+    background-color: #4b4d4f;
 }
 

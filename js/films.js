@@ -1,29 +1,3 @@
-// let janrList = ['фантастика', 'боевик', 'приключения', 'фэнтези', 'драма', 'комедия', 'мультфильм'];
-// let films = [
-//     ['10:00', 'Человек-паук', [0, 1, 2]],
-//     ['12:00', 'Собачья жизнь 2', [3, 4, 5]],
-//     ['14:00', 'История игрушек 4', [6, 3, 5]],
-//     ['16:00', 'Люди в чёрном: Интернэшнл', [0, 1, 5]]
-// ];
-
-// let filmTarget = [];
-// for (let i = 0; i < films.length; i++) {
-//     filmTarget[0] = document.getElementById('startFilm' + i); //для присвоения в цикле нужно, чтобы id были универсальные, т.е. первая часть одинаковой
-//     filmTarget[1] = document.getElementById('nameFilm' + i);
-//     filmTarget[2] = document.getElementById('janrFilm' + i);
-//     for (let k = 0; k < films[i].length; k++) {
-//         filmTarget[k].innerHTML = films[i][k];
-//         if (k = 2) {
-//             filmTarget[k].innerHTML = '';
-//             for (let j = 0; j < films[i][k].length; j++) {
-//                 filmTarget[k].innerHTML += janrList[films[i][k][j]];
-//                 if (j < films[i][k].length - 1) {
-//                     filmTarget[k].innerHTML += ', ';
-//                 }
-//             }
-//         }
-//     }
-// }
 
 const mockFilmsList = [{
         name: "Человек-паук",
@@ -83,6 +57,7 @@ const mockFilmsList = [{
         price: 250
     }
 ];
+
 //справочник жанров
 const janrsList = [{
         id: 0,
@@ -114,57 +89,37 @@ const janrsList = [{
     }
 ];
 
-//TODO
 //Генерация мест (20)
 //Стоимость в зависимости от места должна быть разной (центральные, боковые)
-//Забронированные места будут генерироваться случайно
+//Забронированные места будут генерироваться случайно+
+let numberPlaces = 20;
+const places = [];
+const sidePlaces = [1, 2, 8, 9, 10, 11, 17, 18, 19, 20];
+let isPlaceBooked = false;
+let extraPlacePrice = 0;
 
-const places = [
-    {
-        number: 1,
-        price: 100,
-        booking: false
-    },
-    {
-        number: 2,
-        price: 100,
-        booking: false
-    },
-    {
-        number: 3,
-        price: 100,
-        booking: false
-    },
-    {
-        number: 4,
-        price: 100,
-        booking: true
-    },
-    {
-        number: 5,
-        price: 100,
-        booking: false
-    },
-    {
-        number: 6,
-        price: 100,
-        booking: true
-    },
-    {
-        number: 7,
-        price: 100,
-        booking: true
-    },
-    {
-        number: 8,
-        price: 100,
-        booking: true
+for(let i = 0; i < 20; i++){
+    if(Math.floor(Math.random()*10 > 5)) {
+        isPlaceBooked = true;
+    } else {
+        isPlaceBooked = false;
     }
-]
+    if(!sidePlaces.includes(i+1)){
+        extraPlacePrice = 100;
+    } else {
+        extraPlacePrice = 0;
+    }    
+    places.push({
+        number: i,        
+        price: 100 + extraPlacePrice,
+        booking: isPlaceBooked        
+    });
+}
 
 let arrNewFilms = [];
 let arrHireFilms = [];
 
+//Сортировка фильмов на "в прокате" и "новинки"
 for (const key in mockFilmsList) {
     if (mockFilmsList[key].filmNew) {
         console.log('New ' + mockFilmsList[key].name);
@@ -176,13 +131,12 @@ for (const key in mockFilmsList) {
     }
 }
 
+// Создание методов для film
 const film = {
     getName: function () {
-        // console.log(this.name);
         return this.name;
     },
     getStart: function () {
-        // console.log(this.start);
         return this.start;
     },
     getJanrs: function () {
@@ -196,7 +150,6 @@ const film = {
         }
         strJanrs = strJanrs.replace(/.$/, '');
         strJanrs = strJanrs.replace(/.$/, '');
-        // console.log('Жанры фильмов ' + strJanrs);
         return strJanrs;
     },
     getLink: function () {
@@ -228,7 +181,7 @@ const film = {
 let modalBooking = document.getElementById('modalBooking')
 let buttonCloseBooking = document.getElementById('buttonCloseBooking')  
  
-
+//Наполнение таблицы фильмами
 for (const key in arrHireFilms) {
     const filmName = film.getName.bind(arrHireFilms[key])();
     const filmStart = film.getStart.bind(arrHireFilms[key])();
@@ -271,7 +224,6 @@ for (const key in arrHireFilms) {
     filmsHireHTML.appendChild(tr);
 }
 
-
 buttonCloseBooking.onclick = function(){
     modalBooking.style.display = 'none';  
 }
@@ -284,6 +236,7 @@ let totalCost = document.getElementById('totalCost');
 let filmPrice = document.getElementById('bookedFilmPrice'); 
 totalCost.innerHTML =  '0';
 
+//Подсчёт стоимости билетов при изменении количества и вывод в форму
 ticketQnt.onchange = function(){
     if(ticketQnt.value >= 0){
         totalCost.innerHTML =  parseInt(ticketQnt.value) * parseInt(filmPrice.innerText);         
@@ -296,6 +249,7 @@ ticketQnt.onchange = function(){
     }
 }
 
+//Создание элементов Фильмов для сетки(карусели)
 for(let i = 0; i < 3; i++){
     for (const key in arrNewFilms) {
         const filmName = film.getName.bind(arrNewFilms[key])();
@@ -360,18 +314,45 @@ for(let i = 0; i < 3; i++){
     }
 }
 
+//Наполнение карусели элементами 
+$(document).ready(function () {
+    $('.owl-carousel').owlCarousel();
+});
+
+//TODO
+    //Добавить код после добавления адаптивности
+    // $('.owl-carousel').owlCarousel({
+    //     loop: true,
+    //     margin: 10,
+    //     nav: true,
+    //     responsive: {
+    //         0: {
+    //             items: 1
+    //         },
+    //         600: {
+    //             items: 3
+    //         },
+    //         1000: {
+    //             items: 5
+    //         }
+    //     }
+    // })
+
+//Генерация мест
 let placesHTML = document.querySelector('.booking-window__places');
 for (const place of places) {
     let placeDiv = document.createElement('div');
-    placeDiv.innerHTML = place.number;
-    placeDiv.classList.add('booking-window__place-item');    
+    placeDiv.innerHTML = place.number + 1;
+    placeDiv.classList.add('booking-window__place-item');
+    placeDiv.dataset.placeNumber = place.number;
+    placeDiv.id = `placeNumber${place.number}`;
     if(place.booking){
         placeDiv.classList.add('booking-window__place-item_free');
     } else {
         placeDiv.classList.add('booking-window__place-item_booked');
     }
     placeDiv.addEventListener('click', order);
-    placeDiv.addEventListener('click', placeToggle);
+    // placeDiv.addEventListener('click', placeToggle);
     placeDiv.addEventListener('contextmenu', placeContext);
     placeDiv.addEventListener('mouseover', placeHover);
     placeDiv.addEventListener('mouseout', placeHoverOut);    
@@ -380,22 +361,47 @@ for (const place of places) {
 
 // Обработка клика на квадрате с местом, заполнение элементов input формы;
 function order(event) {
-    console.log(event.srcElement.innerHTML);
+    let chosenPlace = event.target.dataset.placeNumber;
+    if(places[chosenPlace].booking){
+        places[chosenPlace].booking = false;
+        let formChosenPlace = document.getElementById('clientChosenPlaces'); 
+        formChosenPlace.value = parseInt(chosenPlace) + 1;
+        placeToggle(chosenPlace);
+    } else {
+        alert('Место занято');
+    }
     console.log('Обработка клика на квадрате с местом, заполнение элементов input формы');
+    console.log('place-number-data-set',  event.target.dataset.placeNumber);
 }
+
 // Обработка клика на квадрате с местом, смена цвета;
-function placeToggle() {
+function placeToggle(chosenPlace) {
+    let placeDiv = document.getElementById(`placeNumber${chosenPlace}`)
+    placeDiv.classList.toggle("booking-window__place-item_free");
+    placeDiv.classList.toggle("booking-window__place-item_booked");
     console.log('Обработка клика на квадрате с местом, смена цвета');
 }
-// Обрабтка правого клика на квадате с местом;
-function placeContext() {
+
+// Обработка правого клика на квадате с местом;
+function placeContext(event) {
+    let chosenPlace = event.target.dataset.placeNumber;
+    let placePrice = places[chosenPlace].price;
+    event.preventDefault();
+    alert('Надбавка за место ' + placePrice);
     console.log('Обрабтка правого клика на квадате с местом');
 }
+
 // Обработка события перемещения курсора мыши над элементом;
-function placeHover() {
+function placeHover(event) {
+    let chosenPlace = event.target.dataset.placeNumber;
+    let placeDiv = document.getElementById(`placeNumber${chosenPlace}`)
+    placeDiv.classList.toggle('booking-window__place-item_hover');
     console.log('Обработка события перемещения курсора мыши над элементом');
 }
-function placeHoverOut() {
+function placeHoverOut(event) {
+    let chosenPlace = event.target.dataset.placeNumber;
+    let placeDiv = document.getElementById(`placeNumber${chosenPlace}`)
+    placeDiv.classList.toggle('booking-window__place-item_hover');
     console.log('Обработка события перемещения курсора мыши над элементом - Out');
 }
 
