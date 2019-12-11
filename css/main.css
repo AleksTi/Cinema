@@ -900,14 +900,11 @@ input[type="button"], input[type="submit"], button {
     display: flex;
     justify-content: center; 
     align-items: center;
+    background-color: #a3cc40;
 }
 
 .booking-window__place-item_booked {
     background-color: #ffa500;
-}
-
-.booking-window__place-item_free {
-    background-color: #a3cc40;
 }
 
 .booking-window__place-item_hover {

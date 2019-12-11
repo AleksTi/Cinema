@@ -98,7 +98,7 @@ const sidePlaces = [1, 2, 8, 9, 10, 11, 17, 18, 19, 20];
 let isPlaceBooked = false;
 let extraPlacePrice = 0;
 
-for(let i = 0; i < 20; i++){
+for(let i = 0; i < numberPlaces; i++){
     if(Math.floor(Math.random()*10 > 5)) {
         isPlaceBooked = true;
     } else {
@@ -339,25 +339,35 @@ $(document).ready(function () {
     // })
 
 //Генерация мест
-let placesHTML = document.querySelector('.booking-window__places');
+let bookingForm = document.getElementById('bookingForm');
+let placeBookingContainer = document.createElement('div');
+placeBookingContainer.classList.add('booking-window__container');
+
+
+//Задание стлей через style (требование ТЗ)
+placeBookingContainer.style.display = 'flex';
+placeBookingContainer.style.flexWrap = 'wrap';
+placeBookingContainer.style.justifyContent = 'space-between';
+placeBookingContainer.style.width = '100%';
+
 for (const place of places) {
-    let placeDiv = document.createElement('div');
-    placeDiv.innerHTML = place.number + 1;
-    placeDiv.classList.add('booking-window__place-item');
-    placeDiv.dataset.placeNumber = place.number;
-    placeDiv.id = `placeNumber${place.number}`;
-    if(place.booking){
-        placeDiv.classList.add('booking-window__place-item_free');
+    let placeBookingItem = document.createElement('div');
+     placeBookingItem.innerHTML = place.number + 1;
+     placeBookingItem.classList.add('booking-window__place-item');
+     placeBookingItem.dataset.placeNumber = place.number;
+     placeBookingItem.id = `placeNumber${place.number}`;
+    if(!place.booking){
+         placeBookingItem.classList.add('booking-window__place-item_booked');
     } else {
-        placeDiv.classList.add('booking-window__place-item_booked');
     }
-    placeDiv.addEventListener('click', order);
-    // placeDiv.addEventListener('click', placeToggle);
-    placeDiv.addEventListener('contextmenu', placeContext);
-    placeDiv.addEventListener('mouseover', placeHover);
-    placeDiv.addEventListener('mouseout', placeHoverOut);    
-    placesHTML.append(placeDiv);
+     placeBookingItem.addEventListener('click', order);
+    //  placeBookingItem.addEventListener('click', placeToggle);
+     placeBookingItem.addEventListener('contextmenu', placeContext);
+     placeBookingItem.addEventListener('mouseover', placeHover);
+     placeBookingItem.addEventListener('mouseout', placeHoverOut);
+     placeBookingContainer.append(placeBookingItem)  
 }
+bookingForm.after(placeBookingContainer);
 
 // Обработка клика на квадрате с местом, заполнение элементов input формы;
 function order(event) {
@@ -377,7 +387,6 @@ function order(event) {
 // Обработка клика на квадрате с местом, смена цвета;
 function placeToggle(chosenPlace) {
     let placeDiv = document.getElementById(`placeNumber${chosenPlace}`)
-    placeDiv.classList.toggle("booking-window__place-item_free");
     placeDiv.classList.toggle("booking-window__place-item_booked");
     console.log('Обработка клика на квадрате с местом, смена цвета');
 }
