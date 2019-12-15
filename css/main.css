@@ -330,7 +330,8 @@ input[type="button"], input[type="submit"], button {
   
 } */
 
-.booking-form__input {
+.booking-form__input,
+.cities-modal__form-input {
     font-size: 16px;
     color: #6c6c6c;
     padding: 5px 3px;
@@ -834,7 +835,8 @@ input[type="button"], input[type="submit"], button {
 /* Медиа - правила */
 
 .booking-modal,
-.order-modal {
+.order-modal,
+.cities-modal__bg {
     background: rgba(0,0,0,.5);
     position: fixed;
     left: 0;
@@ -847,7 +849,8 @@ input[type="button"], input[type="submit"], button {
 }
 
 .booking-window,
-.order-window {
+.order-window,
+.cities-modal__window {
     position: relative;
     left: 0;
     right: 0;
@@ -861,7 +864,8 @@ input[type="button"], input[type="submit"], button {
 }
 
 .booking-window__close-button,
-.order-window__close-button{
+.order-window__close-button,
+.cities-modal__close-button {
     display: block;
     font-weight: 900;
     width: 22px;
@@ -872,13 +876,15 @@ input[type="button"], input[type="submit"], button {
 }
 
 .booking-window__close-button:hover,
-.order-window__close-button:hover{
+.order-window__close-button:hover,
+.cities-modal__close-button:hover {
     background-color: #bbb;
     cursor: default;
 
 }
 
-.booking-window__header{
+.booking-window__header, 
+.cities-modal__form-header {
     display: inline-block;
     width: 12rem;
     margin-bottom: 0.25rem;
@@ -911,3 +917,11 @@ input[type="button"], input[type="submit"], button {
     background-color: #4b4d4f;
 }
 
+#cityName:hover {
+    cursor: pointer;
+    color: #90d23d;
+}
+
+.cities-modal__form {
+    margin-bottom: 10px;
+}

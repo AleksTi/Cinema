@@ -32,7 +32,7 @@
         <header class="header">
             <div class="header__logo"><a href="http://university.innopolis.ru" target="_blank"><img
                         src="images/logo.png" alt="Лого Иннополис" title="Иннополис.ру" /></a></div>
-            <div class="header__location">Ваш город: <u>Москва</u></div>
+            <div class="header__location">Ваш город: <u id='cityName'>Не определён</u></div>
             <nav class="header-nav" aria-label="Главное меню">
                 <ul>
                     <li class="header-nav__item">
@@ -768,6 +768,20 @@
                 </div>
             </div>
 
+            <div id="citiesModal" class="cities-modal__bg">
+                <div class="cities-modal__window">
+                    <span id="buttonCitesClose" class="cities-modal__close-button">X</span>
+                    <form id="citiesModalForm" class="cities-modal__form" action="#" method="GET">
+                        <div class="cities-modal__form-input-wrapper">
+                            <label class="cities-modal__form-header">Введите ваш город</label>
+                            <input class="cities-modal__form-input" type="text" name="cities-modal__input-city" value="" id="modalCityName" 
+                                placeholder="Введите ваш город" required aria-required="true" aria-label="Введите ваш город" />
+                        </div>                        
+                    </form>                   
+                    <div id="modalCitiesList" class="cities-modal__cities"></div>
+                </div>
+            </div>
+
     </div>
 
     <!-- Подключение Babel -->    
@@ -775,6 +789,7 @@
     <script type="text/babel" src="js/getPresent.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/ajax.js"></script>
     <!-- <script src="js/films.js"></script>
     <script src="js/getPresent.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
